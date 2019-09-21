@@ -262,7 +262,7 @@ def get_from_cache(url, cache_dir=None, force_download=False, proxies=None):
     if not os.path.exists(cache_path) or force_download:
         # Download to temporary file, then copy to cache dir once finished.
         # Otherwise you get corrupt cache entries if the download gets interrupted.
-        with tempfile.NamedTemporaryFile() as temp_file:
+        with tempfile.NamedTemporaryFile(dirname='/capstone/tmp',) as temp_file:
             logger.info("%s not found in cache or force_download set to True, downloading to %s", url, temp_file.name)
 
             # GET file object

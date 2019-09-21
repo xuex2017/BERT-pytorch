@@ -1,0 +1,10 @@
+The cache_dir saves pretrained model weight.
+Must export environment variable PYTORCH_TRANSFORMERS_CACHE to some dir under /capstone to avoid disk storage problem
+
+Call squad.sh
+Will not train on train dataset because I commented out lines that do training.
+It will directly load pretrained model from cache dir and save to out_dir.
+
+Call predict.sh
+Will load model from out_dir and cache_dir, then output prediction.json to out_dir
+
